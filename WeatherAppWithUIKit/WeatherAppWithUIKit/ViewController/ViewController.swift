@@ -13,7 +13,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        hourTableView.dataSource = self
+        hourTableView.delegate = self
     }
 
 }
@@ -32,4 +34,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
       return cell
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "🗓️ 시간별 예보 \n"
+    }
 }
